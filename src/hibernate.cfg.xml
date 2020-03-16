@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+    	
+    	<!-- 配置 连接数据库 的基本信息 -->
+    	<property name="connection.username">root</property>
+    	<property name="connection.password">123456</property>
+    	<property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+    	<property name="connection.url">jdbc:mysql://localhost:3306/db_Hibernate_demo?useUnicode=true&amp;characterEncode=UTF-8&amp;serverTimezone=GMT%2B8</property>
+    	
+    	<!-- 配置 Hibernate 的基本信息 -->
+    	<!-- 
+    		Hibernate 所使用的 数据库方言 Dialect： 
+    		1. 自动建表：可以选择 MySQL5InnoDBDialect 或者  MySQL5Dialect
+    		2. 支持外键（Foreign Key）：只能选择 InnoDB engine
+    		所以，推荐选择	=>	MySQL5InnoDBDialect
+    	-->    	
+    	<!-- property name="dialect">org.hibernate.dialect.MySQLInnoDBDialect</property> -->
+    	<!-- property name="dialect">org.hibernate.dialect.MySQL5Dialect</property> -->
+    	<property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+    	
+    	<!-- 执行操作时 是否在控制台 打印SQL -->
+    	<property name="show_sql">true</property>
+    	
+    	<!-- 是否对 SQL 进行优化 -->
+    	<property name="format_sql">false</property>
+    	
+    	<!-- 指定自动生成数据表的策略 -->
+    	<property name="hibernate.hbm2ddl.auto">update</property>
+
+		<!-- 设置 Hibernate 的事务隔离级别  -->
+		<!-- 设置  1： Read Uncommited  -->
+		<!-- 设置  2： Read Commited  -->
+		<!-- 设置  4： Repeatale Read  -->
+		<!-- 设置  8： Serializable  -->
+		<property name="connection.isolation">2</property>
+    	
+    	<!-- 删除对象后，使其 OID 置为 null -->
+    	<!-- <property name="use_identifier_rollback">true</property> -->
+    	
+    	<!-- 配置 C3P0  连接池 数据源 -->
+    	<property name="hibernate.c3p0.max_size">10</property>
+    	<property name="hibernate.c3p0.min_size">2</property>
+    	<property name="c3p0.acquire_increment">2</property>
+    	
+    	<property name="c3p0.idle_test_period">2000</property>
+    	<property name="c3p0.timeout">2000</property>
+    	
+    	<property name="c3p0.max_statements">10</property>
+    	
+    	<!-- 设定 JDBC 的 Statement 读取数据的时候每次从数据库取出的 记录条数 -->
+    	<property name="hibernate.jdbc.fetch_size">100</property>
+    	
+    	<!-- 设定 对数据库进行批量删除，批量更新和批量插入 的时候的 批次大小 -->
+    	<property name="hibernate.jdbc.batch_size">30</property>
+    	
+    	
+    	<!-- 指定关联的 Hibernate 映射文件 xxx.hbm.xml 文件 -->
+    	<!-- 
+    	<mapping resource="/com/demo/hibernate/entities/News.hbm.xml"/>
+    	<mapping resource="/com/demo/hibernate/entities/Worker.hbm.xml"/>
+    	
+    	<mapping resource="/com/demo/hibernate/entities/many2one/Customer.hbm.xml"/>
+    	<mapping resource="/com/demo/hibernate/entities/many2one/Order.hbm.xml"/>
+    	-->
+    	 
+    	<mapping resource="/com/demo/hibernate/entities/many2onebothway/Customer.hbm.xml"/>
+    	<mapping resource="/com/demo/hibernate/entities/many2onebothway/Order.hbm.xml"/>
+    
+    </session-factory>
+    
+</hibernate-configuration>

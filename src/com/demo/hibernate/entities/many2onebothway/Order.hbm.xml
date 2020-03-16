@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2020-3-15 12:25:09 by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.demo.hibernate.entities.many2onebothway">
+
+    <class name="Order" table="ORDERS">
+    
+        <id name="orderId" type="java.lang.Integer">
+            <column name="ORDER_ID" />
+            <generator class="native" />
+        </id>
+        
+        <property name="orderName" type="java.lang.String">
+            <column name="ORDER_NAME" />
+        </property>
+        
+        <!-- 
+        	映射 多对一的 关联关系
+        	使用 many-to-one 来映射 “多对1” 的关联关系
+        	name: 多 这一端关联的  1那一端的属性的名字
+        	class: 1那一端的属性对应的类名
+        	column：1那一端 在 多的一端 对应的数据表中的外键的名字。        
+        -->        
+        <many-to-one name="customer" class="Customer" column="CUSTOMER_ID">
+        </many-to-one>
+        
+    </class>
+    
+</hibernate-mapping>
