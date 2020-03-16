@@ -1,4 +1,4 @@
-package com.demo.hibernate.entities;
+package com.demo.hibernate.entities.basic;
 
 import java.sql.CallableStatement;
 import java.sql.Connection;

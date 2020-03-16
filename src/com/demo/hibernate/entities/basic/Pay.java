@@ -1,4 +1,4 @@
-package com.demo.hibernate.entities;
+package com.demo.hibernate.entities.basic;
 
 public class Pay {
 	

@@ -2,7 +2,7 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2020-3-14 18:39:52 by Hibernate Tools 3.5.0.Final -->
-<hibernate-mapping package="com.demo.hibernate.entities">
+<hibernate-mapping package="com.demo.hibernate.entities.basic">
     
     <class name="Worker" table="WORKER">
     

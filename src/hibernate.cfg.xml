@@ -59,17 +59,17 @@
     	<property name="hibernate.jdbc.batch_size">30</property>
     	
     	
-    	<!-- 指定关联的 Hibernate 映射文件 xxx.hbm.xml 文件 -->
-    	<!-- 
-    	<mapping resource="/com/demo/hibernate/entities/News.hbm.xml"/>
-    	<mapping resource="/com/demo/hibernate/entities/Worker.hbm.xml"/>
+    	<!-- 指定关联的 Hibernate 映射文件 xxx.hbm.xml 文件 --> 
+    	<mapping resource="/com/demo/hibernate/entities/basic/News.hbm.xml"/>
+    	<mapping resource="/com/demo/hibernate/entities/basic/Worker.hbm.xml"/>
     	
+    	<!-- 
     	<mapping resource="/com/demo/hibernate/entities/many2one/Customer.hbm.xml"/>
     	<mapping resource="/com/demo/hibernate/entities/many2one/Order.hbm.xml"/>
-    	-->
     	 
     	<mapping resource="/com/demo/hibernate/entities/many2onebothway/Customer.hbm.xml"/>
     	<mapping resource="/com/demo/hibernate/entities/many2onebothway/Order.hbm.xml"/>
+    	-->
     
     </session-factory>
     

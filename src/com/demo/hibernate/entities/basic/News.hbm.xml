@@ -2,9 +2,9 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 2020-3-8 18:19:35 by Hibernate Tools 3.5.0.Final -->
-<hibernate-mapping>
+<hibernate-mapping package="com.demo.hibernate.entities.basic">
 
-    <class name="com.demo.hibernate.entities.News" table="news" 
+    <class name="News" table="news" 
     	dynamic-update="true" dynamic-insert="true">    
     
         <id name="id" type="java.lang.Integer">

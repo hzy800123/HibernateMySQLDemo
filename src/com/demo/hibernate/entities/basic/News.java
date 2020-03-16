@@ -1,4 +1,4 @@
-package com.demo.hibernate.entities;
+package com.demo.hibernate.entities.basic;
 
 import java.sql.Blob;
 import java.util.Date;
