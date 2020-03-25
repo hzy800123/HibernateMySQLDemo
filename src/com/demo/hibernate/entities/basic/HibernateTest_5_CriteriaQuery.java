@@ -24,7 +24,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
-public class HibernateTest_5_Criteria {
+public class HibernateTest_5_CriteriaQuery {
 
 	private SessionFactory sessionFactory;
 	private Session session;
@@ -103,7 +103,7 @@ public class HibernateTest_5_Criteria {
 		System.out.println(" ------ ");
 		
 		// Ìõ¼þ ²éÑ¯
-		criteriaQuery.where(criteriaBuilder.like(root.get("author"), "%bb%"));
+		criteriaQuery.where(criteriaBuilder.like(root.get("author"), "%aa%"));
 		Query query2 = session.createQuery(criteriaQuery);
 		list4 = query2.getResultList();
 		list4.forEach(System.out::println);
