@@ -27,6 +27,7 @@
         <!-- cascade 设定 级联操作，可以取值：delete, delete-orphan, save-update 等
                                        开发时不建议 设定该属性，建议使用手工的方式来处理。 -->
         <!-- order-by 在查询时对集合中的元素进行排序，order-by 中使用的是表的 字段名，而不是持久化类的 属性名。 -->
+        <!-- order-by 属性，是直接在数据库中排序。如果使用 sort 属性，需要在内存中排序，比较浪费内存。所以推荐使用 order-by 属性。 -->
         <set name="orders" table="ORDERS" inverse="true" cascade="save-update" order-by="ORDER_NAME DESC">
         	<key column="CUSTOMER_ID"></key>
         	<one-to-many class="Order"/>
