@@ -130,7 +130,7 @@ public class HibernateTest_3 {
 	@Test
 	public void testSaveBlob() throws IOException, SQLException {
 		News news = new News();
-		news.setTitle("AAA2");
+		news.setTitle("AAA5");
 		news.setAuthor("aaa");
 		news.setDate(new Date());
 		news.setDesc("DESC");
@@ -142,7 +142,7 @@ public class HibernateTest_3 {
 		news.setImage(image);
 		session.save(news);
 		
-		News news2 = session.get(News.class, 1);
+		News news2 = session.get(News.class, 6);
 		Blob image2 = news2.getImage();
 		
 		InputStream in = image2.getBinaryStream();
