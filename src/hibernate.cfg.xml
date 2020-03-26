@@ -58,6 +58,9 @@
     	<!-- 设定 对数据库进行批量删除，批量更新和批量插入 的时候的 批次大小 -->
     	<property name="hibernate.jdbc.batch_size">30</property>
     	
+    	<!-- 如果使用 sessionFactory.getCurrentSession(), 不使用 sessionFactory.openSession(), 就需要添加以下属性。 -->
+    	<!-- 如果使用的是本地事务（JDBC 事务 本地事务：数据库只有一个） -->
+    	<property name="hibernate.current_session_context_class">thread</property>
     	
     	<!-- 指定关联的 Hibernate 映射文件 xxx.hbm.xml 文件 --> 
     	<mapping resource="/com/demo/hibernate/entities/basic/News.hbm.xml"/>
